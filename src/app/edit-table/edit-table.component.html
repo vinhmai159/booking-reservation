@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Thêm bàn</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <form #form="ngForm">
+        <div class="form-group">
+          <label>Tên bàn</label>
+          <input [(ngModel)]="info.name" #name="ngModel" name="name" [class.is-invalid]="name.invalid && name.touched" required type="text" class="form-control">
+          <small [hidden]="name.valid || name.untouched" class="text-danger">Không được bỏ trống tên bàn</small>
+        </div>
+        <div class="form-group">
+          <label>Số chỗ</label>
+          <input [(ngModel)]="info.quantity" #quantity="ngModel" pattern="^[0-9]{1}$" quantity="ngModel" name="quantity" [class.is-invalid]="quantity.invalid && quantity.touched" required type="text" class="form-control">
+          <div *ngIf="quantity.errors && (quantity.touched)"> <!--or email.touched-->
+            <small *ngIf="quantity.errors.required" class="text-danger">Số lượng bàn không được bỏ trống</small>
+            <small *ngIf="quantity.errors.pattern" class="text-danger">Chỉ chấp nhận số từ 1-9</small>
+          </div>
+        </div>
+        <button [disabled]="form.invalid" class="btn btn-primary  mr-2" (click)="editTable()">Ok</button>
+        <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+

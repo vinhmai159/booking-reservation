@@ -1,0 +1,21 @@
+.box {
+  padding: 20px;
+  border-radius: 20px;
+  background-color:#c0c0c02e;
+  margin-bottom: 20px;
+}
+.left {
+  font-size: 24px;
+  font-weight: bold;
+  width: 35%;
+}
+.right {
+  font-size: 24px;
+  text-align: left;
+  width: 65%;
+}
+.left1 {
+  font-size: 18px;
+  font-weight: bold;
+  width: 35%;
+}

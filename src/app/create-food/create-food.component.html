@@ -1,0 +1,22 @@
+
+<div class="container">
+  <h2>Thêm món ăn</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <form>
+        <div class="form-group">
+          <label>Tên món ăn</label>
+          <input [(ngModel)]="info.name" #name="ngModel" name="name" [class.is-invalid]="name.invalid && name.touched" required type="text" class="form-control">
+          <small [hidden]="name.valid || name.untouched" class="text-danger">Không được bỏ trống tên thức ăn</small>
+        </div>
+        <div class="form-group">
+          <label>Giá tiền</label>
+          <input [(ngModel)]="info.price" #price="ngModel" name="price" [class.is-invalid]="price.invalid && price.touched" required type="text" class="form-control">
+          <small [hidden]="price.valid || price.untouched" class="text-danger">Giá tiền không được bỏ trống</small>
+        </div>
+        <button class="btn btn-primary mr-2" (click)="addFood()">Ok</button>
+        <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

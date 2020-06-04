@@ -1,0 +1,71 @@
+<div class="content">
+
+  <div class="container">
+    <h2>Danh sách đơn đặt bàn</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box" *ngFor="let one of listOrders">
+          <button class="btn btn-danger" (click)="deleteOrder(one.id, one.table.id)">Delete</button>
+          <div class="clearfix">
+            <div class="float-left left">
+              Tên người đặt:
+            </div>
+            <div class="float-right right">
+              {{one.name}}
+            </div>
+          </div>
+          <div class="clearfix">
+            <div class="float-left left">
+              CMND:
+            </div>
+            <div class="float-right right">
+              {{one.cmnd}}
+            </div>
+          </div>
+          <div class="clearfix">
+            <div class="float-left left">
+              Số điện thoại:
+            </div>
+            <div class="float-right right">
+              {{one.phone}}
+            </div>
+          </div>
+          <div class="clearfix border-bottom pb-2">
+            <div class="float-left left">
+              Bàn đặt:
+            </div>
+            <div class="float-right right">
+              Tên bàn: {{one.table.name}} - số chỗ ngồi: {{one.table.quantity}}
+            </div>
+          </div>
+          <h5 class="pt-2">Danh sách các món ăn đặt</h5>
+          <div *ngIf="one.foods">
+            <div *ngFor="let item of one.foods">
+              <div class="clearfix">
+                <div class="float-left left1">
+                  Tên món ăn:
+                </div>
+                <div class="float-right right">
+                  {{item.name}}
+                </div>
+              </div>
+              <div class="clearfix">
+                <div class="float-left left1">
+                  Giá tiền:
+                </div>
+                <div class="float-right right">
+                  {{item.price}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="one.foods.length === 0">
+            Khách hàng không đặt thức ăn
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

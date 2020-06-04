@@ -25,6 +25,5 @@ export class FoodService {
   }
   updateFood(food: any){
     this.firestore.doc('foods/' + food.id).update(food);
-
   }
 }

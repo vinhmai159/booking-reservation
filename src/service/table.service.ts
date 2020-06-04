@@ -30,4 +30,7 @@ export class TableService {
   getTableById(id1: string) {
     return this.db.collection('table').doc(id1).ref.get();
   }
+  updateStatusToTrue(table: any) {
+    this.db.doc('table/' + table.id).update(table);
+  }
 }

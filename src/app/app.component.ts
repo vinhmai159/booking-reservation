@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ExampleService } from './example.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +10,6 @@ export class AppComponent {
   timeStamp: string;
 
   constructor(
-    private exampleService: ExampleService
   ) {}
   ngOnInit() {
     }

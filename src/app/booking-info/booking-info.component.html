@@ -1,0 +1,50 @@
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="title col-md-12 text-center mb-4">
+        <h1>Thăm ngàn Restaurant</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="img col-md-6">
+        <img src="https://previews.123rf.com/images/mything/mything1602/mything160200034/53356747-set-of-cartoon-fast-food-vector-illustration-isolated-on-white-.jpg" alt="">
+      </div>
+      <div class="col-md-6">
+        <h3 class="mb-5">Đặt bàn ngay</h3>
+        <form #userForm="ngForm">
+            <div class="form-group">
+              <label>Tên khách hàng</label>
+              <input [(ngModel)]="info.name" #name="ngModel" name="name" [class.is-invalid]="name.invalid && name.touched" required type="text" class="form-control">
+              <small [hidden]="name.valid || name.untouched" class="text-danger">Không được bỏ trống tên khách hàng</small>
+            </div>
+            <div class="form-group">
+              <label>CMND</label>
+              <input [(ngModel)]="info.cmnd" #cmnd="ngModel" name="cmnd" [class.is-invalid]="name.invalid && name.touched" required type="text" class="form-control">
+              <small [hidden]="cmnd.valid || cmnd.untouched" class="text-danger">Không được bỏ trống CMND</small>
+            </div>
+            <div class="form-group">
+              <label>Số điện thoại</label>
+              <input [(ngModel)]="info.phone" #phone="ngModel" name="phone" [class.is-invalid]="name.invalid && name.touched" required type="text" class="form-control">
+              <small [hidden]="phone.valid || phone.untouched" class="text-danger">Không được bỏ trống số điện thoại</small>
+            </div>
+            <div class="form-group">
+              <label for="jc">Chọn bàn</label>
+              <select required [(ngModel)]="info.table" [class.is-invalid]="jcg.invalid && jcg.touched" name="jcg" required class="form-control" #jcg="ngModel">
+                <option value="">--Choose your topic--</option> <!--Bat buoc value=""-->
+                <option *ngFor="let one of tables" [value]="one.id">{{'Tên bàn: ' + one.name + ' -  Số chỗ: ' + one.quantity}}</option>
+              </select>
+              <small [hidden]="jcg.valid || jcg.untouched" class="text-danger">Hãy chọn một bàn</small>
+            </div>
+            <h5>Đặt món ăn (Tùy chọn)</h5>
+            <div *ngFor="let one of listFoods">
+              <div class="form-group form-check">
+                <input name="status" [(ngModel)]="one.status" type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">{{'Tên món ăn: ' + one.name + ' - Giá tiền: ' + one.price}}</label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="userForm.form.invalid" (click)="addBooking()">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

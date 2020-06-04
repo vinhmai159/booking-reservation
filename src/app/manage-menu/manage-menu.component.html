@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Danh sách món ăn</h2>
+  <div class="row">
+    <div class="col-md-9">
+      <a routerLink="/home/create-food" class="mb-2 btn btn-success">Add Food</a>
+      <table class="table table-striped table-inverse table-responsive">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Tên món ăn</th>
+            <th>Giá tiền</th>
+            <th>Action</th>
+
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let one of listFoods">
+              <td>{{one.name}}</td>
+              <td>{{one.price}}</td>
+              <td><a routerLink="/home/update-food/{{one.id}}" class="mr-1 btn btn-primary">Edit</a><button (click)="deleteFood(one.id)" class="btn btn-danger">Delete</button></td>
+            </tr>
+          </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

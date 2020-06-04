@@ -1,0 +1,9 @@
+.title {
+  letter-spacing: 2;
+  font-weight: 600;
+  font-family: 'Architects Daughter', Georgia, Times, 'Times New Roman', serif;
+  color: lightseagreen;
+}
+.img img {
+  width: 100%;
+}

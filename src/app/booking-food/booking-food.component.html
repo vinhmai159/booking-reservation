@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Đặt món ăn (tùy chon)</h2>
+  <div class="row mt-2">
+    <div *ngFor="let one of listFoods">
+      <div class="form-group form-check">
+        <input [(ngModel)]="one.status" type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">{{'Tên món ăn: ' + one.name + ' Giá tiền: ' + one.price}}</label>
+      </div>
+    </div>
+  </div>
+</div>
