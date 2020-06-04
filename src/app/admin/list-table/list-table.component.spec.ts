@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OderFoodComponent } from './oder-food.component';
+import { ListTableComponent } from './list-table.component';
 
-describe('OderFoodComponent', () => {
-  let component: OderFoodComponent;
-  let fixture: ComponentFixture<OderFoodComponent>;
+describe('ListTableComponent', () => {
+  let component: ListTableComponent;
+  let fixture: ComponentFixture<ListTableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OderFoodComponent ]
+      declarations: [ ListTableComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OderFoodComponent);
+    fixture = TestBed.createComponent(ListTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

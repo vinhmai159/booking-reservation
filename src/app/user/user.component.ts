@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { ExampleService } from '../example.service';
-import { snapshotChanges } from '@angular/fire/database/public_api';
 
 @Component({
   selector: 'app-user',
@@ -9,19 +6,10 @@ import { snapshotChanges } from '@angular/fire/database/public_api';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  policies:any[];
-  constructor(private firestore: AngularFirestore,private example:ExampleService) { }
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.example.getPolicies().subscribe(data => {
-      this.policies = data.map(e => {
-        return {
-          id: e.payload.doc.id,
-          ...e.payload.doc.data()
-        } as any;
-      })
-      console.log(this.policies)
-    });
   }
 
 }
