@@ -10,6 +10,10 @@ import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { UserModule } from './user/user.module';
     HttpClientModule,
     AppRoutingModule,
     AdminModule,
-    UserModule
+    UserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [ExampleService],
   bootstrap: [AppComponent]
