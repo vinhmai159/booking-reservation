@@ -1,11 +1,10 @@
 import { Application, send, Router } from 'https://deno.land/x/oak/mod.ts';
-import { MessageDto } from './../common/message-dto.ts';
 
 const app = new Application();
 const router = new Router();
 
 router.get('/api/message', (ctx) => {
-  const message: MessageDto = {
+  const message: any = {
     message: 'Hello from API!',
     timeStamp: new Date().toTimeString(),
   };
