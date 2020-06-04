@@ -8,9 +8,19 @@ import { Observable } from 'rxjs';
 })
 export class FoodService {
 
-  constructor(private http: HttpClient,private firestore: AngularFirestore) { }
+  constructor(private http: HttpClient, private firestore: AngularFirestore) { }
 
-  getFood() :Observable<any> {
+  getFoods(): Observable <any> {
     return this.firestore.collection('foods').snapshotChanges();
+  }
+  createFood(food: any){
+    return this.firestore.collection('foods').add(food);
+  }
+  updatePolicy(food: any){
+    delete food.id;
+    this.firestore.doc('foods/' + food.id).update(food);
+  }
+  deletePolicy(foodId: string){
+    this.firestore.doc('foods/' + foodId).delete();
 }
 }
