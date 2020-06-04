@@ -8,6 +8,7 @@ import { ListTableComponent } from './list-table/list-table.component';
 import { FormsModule } from '@angular/forms';
 import { ManageMenuComponent } from './manage-menu/manage-menu.component';
 import { CreateFoodComponent } from './manage-menu/create-food/create-food.component';
+import { UpdateFoodComponent } from './manage-menu/update-food/update-food.component';
 
 
 
@@ -17,7 +18,8 @@ import { CreateFoodComponent } from './manage-menu/create-food/create-food.compo
     CreateTableComponent,
     ListTableComponent,
     ManageMenuComponent,
-    CreateFoodComponent
+    CreateFoodComponent,
+    UpdateFoodComponent
   ],
   imports: [
     CommonModule,

@@ -10,17 +10,20 @@ export class FoodService {
 
   constructor(private http: HttpClient, private firestore: AngularFirestore) { }
 
+  getFood(foodId: string){
+    return this.firestore.collection('foods').doc(foodId).ref.get();
+  }
   getFoods(): Observable<any> {
     return this.firestore.collection('foods').snapshotChanges();
   }
-  deleteTable(foodId: string){
+  deleteFood(foodId: string){
     this.firestore.doc('foods/' + foodId).delete();
   }
-  createTable(food: any){
+  createFood(food: any){
+    console.log('create food: ' + food);
     return this.firestore.collection('foods').add(food);
   }
-  updateTable(food: any){
-    delete food.id;
+  updateFood(food: any){
     this.firestore.doc('foods/' + food.id).update(food);
   }
 }
