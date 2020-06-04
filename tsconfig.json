@@ -11,6 +11,11 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
+    "paths": {
+      "http://*": ["../../../.deno/deps/http/*"],
+      "https://*": ["../../../.deno/deps/https/*"],
+      "*.ts": ["*"]
+    },
     "lib": [
       "es2018",
       "dom"
