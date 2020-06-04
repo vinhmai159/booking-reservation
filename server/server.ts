@@ -1,9 +1,25 @@
-import { Application } from "https://deno.land/x/oak/mod.ts";
+import { Application, send, Router } from 'https://deno.land/x/oak/mod.ts';
+import { MessageDto } from './../common/message-dto.ts';
 
 const app = new Application();
+const router = new Router();
 
-app.use((ctx) => {
-  ctx.response.body = "Hello world!";
+router.get('/api/message', (ctx) => {
+  const message: MessageDto = {
+    message: 'Hello from API!',
+    timeStamp: new Date().toTimeString(),
+  };
+  ctx.response.body = message;
 });
 
-await app.listen("127.0.0.1:8000");
+app.use(router.routes());
+app.use(router.allowedMethods());
+app.use(async (context) => {
+  await send(context, context.request.url.pathname, {
+    root: `${Deno.cwd()}/../dist/test-deno-angular`,
+    index: 'index.html',
+  });
+});
+
+app.listen({ port: 8080 });
+console.log(`Listening on localhost:${8080}`);

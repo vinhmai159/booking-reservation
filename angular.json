@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "test-deno-angular"
+    }
+  },
+  "defaultProject": "test-deno-angular",
+  "cli": {
+    "analytics": "53a40f7a-f9a3-4f7c-b212-78c74c26f6fb"
+  }
 }

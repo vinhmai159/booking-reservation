@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ExampleService } from './example.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'test-deno-angular';
-}
+  message: string;
+  timeStamp: string;
+
+  constructor(
+    private exampleService: ExampleService
+  ) {}
+  ngOnInit() {
+    }
+  }
