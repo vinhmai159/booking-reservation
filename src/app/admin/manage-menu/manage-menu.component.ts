@@ -24,6 +24,6 @@ export class ManageMenuComponent implements OnInit {
     });
   }
   deleteFood(id: string) {
-    this.foodSerive.deleteTable(id);
+    this.foodSerive.deleteFood(id);
   }
 }
