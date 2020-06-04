@@ -25,7 +25,9 @@ export class TableService {
     return this.db.collection('table').add(table);
   }
   updateTable(table: any){
-    delete table.id;
     this.db.doc('table/' + table.id).update(table);
+  }
+  getTableById(id1: string) {
+    return this.db.collection('table').doc(id1).ref.get();
   }
 }

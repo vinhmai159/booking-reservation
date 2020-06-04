@@ -1,0 +1,18 @@
+<h2>Thêm món ăn</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <form>
+        <div class="form-group">
+          <label>Tên món</label>
+          <input type="text" required [(ngModel)]="foodName" class="form-control" name="foodName">
+        </div>
+        <div class="form-group">
+          <label>Giá</label>
+          <input type="text" required [(ngModel)]="foodPrice" class="form-control" name="foodPrice">
+        </div>
+        <button class="btn btn-primary" (click)="addFood()">Ok</button>
+      </form>
+    </div>
+  </div>
+</div>
