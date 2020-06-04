@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "nhom-8": {
+      "hosting": {
+        "test-deno-angular": [
+          "nhom-8"
+        ]
+      }
+    }
+  }
+}

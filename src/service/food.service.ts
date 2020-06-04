@@ -10,7 +10,11 @@ export class FoodService {
 
   constructor(private http: HttpClient,private firestore: AngularFirestore) { }
 
-  getFood() : Observable<any> {
+  getFood(): Observable<any> {
     return this.firestore.collection('foods').snapshotChanges();
-}
+  }
+
+  getFoodById(id: any): Observable<any> {
+    return this.firestore.doc('foods/' + id).get();
+  }
 }

@@ -117,6 +117,10 @@
               "devServerTarget": "test-deno-angular:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
