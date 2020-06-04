@@ -15,7 +15,10 @@
             <tr *ngFor="let one of listTables">
               <td>{{one.name}}</td>
               <td>{{one.quantity}}</td>
-              <td><a class="mr-1 btn btn-primary">Edit</a><button (click)="deleteTable(one.id)" class="btn btn-danger">Button</button></td>
+              <td>
+                <a routerLink="edit/{{one.id}}" class="mr-1 btn btn-primary">Edit</a>
+                <button (click)="deleteTable(one.id)" class="btn btn-danger">Delete</button>
+              </td>
             </tr>
           </tbody>
       </table>
